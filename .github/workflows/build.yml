@@ -34,7 +34,7 @@ jobs:
       - name: West Zephyr export
         run: west zephyr-export
       - name: West Build (TIPPER_TF)
-        run: west build -s zmk/app -b tipper_tf -- -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
+        run: west build -s zmk/app -b tipper_tf -- -DZMK_CONFIG="${GITHUB_WORKSPACE}"
       - name: TIPPER_TF DTS File
         if: ${{ always() }}
         run: cat -n build/zephyr/tipper_tf.dts.pre.tmp
