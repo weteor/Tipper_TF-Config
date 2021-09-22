@@ -133,10 +133,10 @@
 // ------|    Spc    |    Nav    |     |    Sym    |    Ent    |------
 //       -------------------------     -------------------------
             bindings = <
-                &kp Q       &kp W       &kp F       &kp P       &kp G               &kp J       &kp L       &kp U       &kp Y       &kp QUOT
-                &hm LSHFT A &hm LGUI R  &hm LALT S  &hm LCTRL T &kp D   &kp C_MUTE  &kp H       &hm RCTRL N &hm RALT E  &hm RGUI I  &hm RSHFT O
-                &kp Z       &kp X       &kp C       &kp V       &kp B               &kp K       &kp M       &kp COMMA   &kp DOT     &kp SEMI
-                                                    &mt NUM_L SPACE  &mo NAV_L      &mo SYM_L   &kp RET 
+                &kp Q       &kp W       &kp F       &kp P       &kp G                   &kp J       &kp L       &kp U       &kp Y       &kp QUOT
+                &hm LSHFT A &hm LGUI R  &hm LALT S  &hm LCTRL T &kp D                   &kp H       &hm RCTRL N &hm RALT E  &hm RGUI I  &hm RSHFT O
+                &kp Z       &kp X       &kp C       &kp V       &kp B   &kp C_MUTE      &kp K       &kp M       &kp COMMA   &kp DOT     &kp SEMI
+                                            &mt NUM_L SPACE  &mo NAV_L                  &mo SYM_L   &kp RET 
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
@@ -150,10 +150,10 @@
 // ------|           |    CFG    |     |           |           |------
 //       -------------------------     -------------------------
             bindings = <
-                &kp GRAVE   &kp CARET   &kp AT      &kp DOLLAR  &kp TILDE           &none       &none       &none       &none       &none
-                &kp AMPS    &kp EXCL    &kp PLUS    &kp UNDER   &kp HASH   &none    &kp PG_UP   &none       &none       &none       &none
-                &kp PIPE    &kp QMARK   &kp MINUS   &kp PERCENT &none               &kp PG_DN   &none       &none       &none       &none
-                                                    &none       &none               &none       &none
+                &kp GRAVE   &kp CARET   &kp AT      &kp DOLLAR  &kp TILDE               &none       &none       &none       &none       &none
+                &kp AMPS    &kp EXCL    &kp PLUS    &kp UNDER   &kp HASH                &kp PG_UP   &none       &none       &none       &none
+                &kp PIPE    &kp QMARK   &kp MINUS   &kp PERCENT &none       &none       &kp PG_DN   &none       &none       &none       &none
+                                                    &none       &none                   &none       &none
             >;
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
         };
@@ -167,10 +167,10 @@
 // ------|           |           |     |    CFG    |           |------
 //       -------------------------     -------------------------
             bindings = <
-                &none       &none       &none       &none       &none               &none       &kp PG_UP   &kp UP      &kp PG_DN   &kp DEL
-                &none       &none       &none       &none       &none     &none     &kp HOME    &kp LEFT    &kp DOWN    &kp RIGHT   &kp END
-                &none       &none       &none       &none       &none               &none       &none       &none       &none       &none
-                                                    &none       &none               &none       &none
+                &none       &none       &none       &none       &none                   &none       &kp PG_UP   &kp UP      &kp PG_DN   &kp DEL
+                &none       &none       &none       &none       &none                   &kp HOME    &kp LEFT    &kp DOWN    &kp RIGHT   &kp END
+                &none       &none       &none       &none       &none       &none       &none       &none       &none       &none       &none
+                                                    &none       &none                   &none       &none
             >;
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
         };
@@ -184,10 +184,10 @@
 // ------|           |           |     |     =     |   ENTER   |------
 //       -------------------------     -------------------------
             bindings = <
-                &none       &kp F9      &kp F10     &kp F11     &kp F12             &kp KP_PLUS &kp KP_N7   &kp KP_N8   &kp KP_N9   &kp KP_SLASH 
-                &none       &kp F5      &kp F6      &kp F7      &kp F8      &none   &kp KP_N0   &kp KP_N4   &kp KP_N5   &kp KP_N6   &kp KP_DOT
-                &none       &kp F1      &kp F2      &kp F3      &kp F4              &kp KP_MINUS &kp KP_N1  &kp KP_N2   &kp KP_N3   &kp KP_MULTIPLY
-                                                    &none       &none               &kp KP_EQUAL &kp KP_ENTER
+                &none       &kp F9      &kp F10     &kp F11     &kp F12                 &kp KP_PLUS &kp KP_N7   &kp KP_N8   &kp KP_N9   &kp KP_SLASH 
+                &none       &kp F5      &kp F6      &kp F7      &kp F8                  &kp KP_N0   &kp KP_N4   &kp KP_N5   &kp KP_N6   &kp KP_DOT
+                &none       &kp F1      &kp F2      &kp F3      &kp F4      &none       &kp KP_MINUS &kp KP_N1  &kp KP_N2   &kp KP_N3   &kp KP_MULTIPLY
+                                                    &none       &none                   &kp KP_EQUAL &kp KP_ENTER
             >;
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
         };
@@ -201,10 +201,10 @@
 // ------|           |           |     |           |           |------
 //       -------------------------     -------------------------
             bindings = <
-                &none       &none       &none       &none       &kp PSCRN           &none       &none       &none       &none       &none
-                &none       &none       &none       &none       &none       &none   &none       &none       &none       &none       &none
-                &kp KP_NUM  &none       &none       &none       &none               &none       &none       &none       &none       &none
-                                                    &none       &none               &none       &none
+                &none       &none       &none       &none       &kp PSCRN               &none       &none       &none       &none       &none
+                &none       &none       &none       &none       &none                   &none       &none       &none       &none       &none
+                &kp KP_NUM  &none       &none       &none       &none       &none       &none       &none       &none       &none       &none
+                                                    &none       &none                   &none       &none
             >;
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
         };
@@ -219,8 +219,8 @@
 //       -------------------------     -------------------------
             bindings = <
                 &none       &none       &none       &none       &none               &out OUT_USB &out OUT_BLE &none        &none        &bt BT_CLR
-                &none       &none       &none       &none       &none       &none   &none        &none        &none        &none        &none
-                &none       &none       &none       &none       &none               &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4
+                &none       &none       &none       &none       &none               &none        &none        &none        &none        &none
+                &none       &none       &none       &none       &none       &none   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4
                                                     &none       &none               &none       &none
             >;
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
