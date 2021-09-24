@@ -16,7 +16,7 @@
 #define CFG_L 4
 #define BLE_L 5
 
-// Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
+// repeating space/backspace
 &lt { quick_tap_ms = <200>; };
 
 / {
@@ -96,17 +96,22 @@
             key-positions = <7 8>;
             bindings = <&kp BACKSPACE>;
             };
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <0 1>;
+            bindings = <&kp ESCAPE>;
+            };
 
         combo_cfgLayer {
             timeout-ms = <50>;
             key-positions = <34 35>;
             bindings = <&mo CFG_L>;
             };
-        combo_bleLayer {
-            timeout-ms = <50>;
-            key-positions = <34 35>;
-            bindings = <&mo BLE_L>;
-            };
+    //    combo_bleLayer {
+    //        timeout-ms = <50>;
+    //        key-positions = <33 34>;
+    //        bindings = <&mo BLE_L>;
+   //         };
 
     };
 
@@ -136,7 +141,7 @@
                 &kp Q       &kp W       &kp F       &kp P       &kp G                   &kp J       &kp L       &kp U       &kp Y       &kp QUOT
                 &hm LSHFT A &hm LGUI R  &hm LALT S  &hm LCTRL T &kp D                   &kp H       &hm RCTRL N &hm RALT E  &hm RGUI I  &hm RSHFT O
                 &kp Z       &kp X       &kp C       &kp V       &kp B   &kp C_MUTE      &kp K       &kp M       &kp COMMA   &kp DOT     &kp SEMI
-                                            &mt NUM_L SPACE  &mo NAV_L                  &mo SYM_L   &kp RET 
+                                            &lt NUM_L SPACE  &mo NAV_L                  &mo SYM_L   &kp RET 
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
