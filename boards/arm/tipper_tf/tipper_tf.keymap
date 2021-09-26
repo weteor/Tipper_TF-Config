@@ -25,7 +25,7 @@
 
         combo_slash {
             timeout-ms = <50>;
-            key-positions = <10 20>;
+            key-positions = <0 10>;
             layers = <BAS_L>;
             bindings = <&kp SLASH>;
             };
@@ -143,7 +143,7 @@
                 &kp Z       &kp X       &kp C       &kp V       &kp B     &kp C_MUTE                &kp K       &kp M       &kp COMMA   &kp DOT     &kp SEMI
                                           &lt NUM_L SPACE  &mo NAV_L                  &mo SYM_L   &kp RET 
             >;
-            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
     
         sym_layer {
@@ -160,7 +160,7 @@
                 &kp PIPE    &kp QMARK   &kp MINUS   &kp PERCENT &none       &none       &kp PG_DN   &none       &none       &none       &none
                                                     &none       &none                   &none       &none
             >;
-            sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp PG_DN PG_UP>;
         };
         
         nav_layer {
@@ -177,7 +177,7 @@
                 &none       &none       &none       &none       &none       &none       &none       &none       &none       &none       &none
                                                     &none       &none                   &none       &none
             >;
-            sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp PG_DN PG_UP>;
         };
 
         num_layer {
@@ -194,7 +194,7 @@
                 &none       &kp F1      &kp F2      &kp F3      &kp F4      &none       &kp KP_MINUS &kp KP_N1  &kp KP_N2   &kp KP_N3   &kp KP_MULTIPLY
                                                     &none       &none                   &kp KP_EQUAL &kp KP_ENTER
             >;
-            sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp PG_DN PG_UP>;
         };
         
         cfg_layer {
@@ -211,7 +211,7 @@
                 &kp KP_NUM  &none       &none       &none       &none       &none       &none       &none       &none       &none       &none
                                                     &none       &none                   &none       &none
             >;
-            sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp PG_DN PG_UP>;
         };
         
         ble_layer {
@@ -223,12 +223,12 @@
 // ------|           |           |     |           |           |------
 //       -------------------------     -------------------------
             bindings = <
-                &none       &none       &none       &none       &none               &out OUT_USB &out OUT_BLE &none        &none        &bt BT_CLR
+                &bootloader       &none       &none       &none       &none               &out OUT_USB &out OUT_BLE &none        &none        &bt BT_CLR
                 &none       &none       &none       &none       &none               &none        &none        &none        &none        &none
                 &none       &none       &none       &none       &none       &none   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4
                                                     &none       &none               &none       &none
             >;
-            sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp PG_DN PG_UP>;
         };
     };
 };
