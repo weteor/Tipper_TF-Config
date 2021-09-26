@@ -25,7 +25,7 @@
 
         combo_slash {
             timeout-ms = <50>;
-            key-positions = <0 10>;
+            key-positions = <10 20>;
             layers = <BAS_L>;
             bindings = <&kp SLASH>;
             };
@@ -140,8 +140,8 @@
             bindings = <
                 &kp W       &kp Q       &kp F       &kp P       &kp G                   &kp J       &kp L       &kp U       &kp Y       &kp QUOT
                 &hm LSHFT A &hm LGUI R  &hm LALT S  &hm LCTRL T &kp D                   &kp H       &hm RCTRL N &hm RALT E  &hm RGUI I  &hm RSHFT O
-                &kp Z       &kp X       &kp C       &kp V       &kp B                   &kp K       &kp M       &kp COMMA   &kp DOT     &kp SEMI
-                                      &kp C_MUTE      &mo NUM_L  &mo NAV_L                  &mo SYM_L   &kp RET 
+                &kp Z       &kp X       &kp C       &kp V       &kp B     &kp C_MUTE                &kp K       &kp M       &kp COMMA   &kp DOT     &kp SEMI
+                                          &kp SPACE  &mo NAV_L                  &mo SYM_L   &kp RET 
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
