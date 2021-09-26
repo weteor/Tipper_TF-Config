@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Pete Johanson
+ * Copyright (c) 2021 weteor
  *
  * SPDX-License-Identifier: MIT
  */
@@ -17,7 +17,7 @@
 #define BLE_L 5
 
 // repeating space/backspace
-&lt { quick_tap_ms = <200>; };
+//&lt { quick_tap_ms = <200>; };
 
 / {
     combos {
@@ -107,11 +107,11 @@
             key-positions = <34 35>;
             bindings = <&mo CFG_L>;
             };
-    //    combo_bleLayer {
-    //        timeout-ms = <50>;
-    //        key-positions = <33 34>;
-    //        bindings = <&mo BLE_L>;
-   //         };
+        combo_bleLayer {
+            timeout-ms = <50>;
+            key-positions = <33 34>;
+            bindings = <&mo BLE_L>;
+            };
 
     };
 
@@ -138,10 +138,10 @@
 // ------|    Spc    |    Nav    |     |    Sym    |    Ent    |------
 //       -------------------------     -------------------------
             bindings = <
-                &kp Q       &kp W       &kp F       &kp P       &kp G                   &kp J       &kp L       &kp U       &kp Y       &kp QUOT
+                &kp W       &kp Q       &kp F       &kp P       &kp G                   &kp J       &kp L       &kp U       &kp Y       &kp QUOT
                 &hm LSHFT A &hm LGUI R  &hm LALT S  &hm LCTRL T &kp D                   &kp H       &hm RCTRL N &hm RALT E  &hm RGUI I  &hm RSHFT O
-                &kp Z       &kp X       &kp C       &kp V       &kp B   &kp C_MUTE      &kp K       &kp M       &kp COMMA   &kp DOT     &kp SEMI
-                                            &lt NUM_L SPACE  &mo NAV_L                  &mo SYM_L   &kp RET 
+                &kp Z       &kp X       &kp C       &kp V       &kp B                   &kp K       &kp M       &kp COMMA   &kp DOT     &kp SEMI
+                                      &kp C_MUTE      &mo NUM_L  &mo NAV_L                  &mo SYM_L   &kp RET 
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
