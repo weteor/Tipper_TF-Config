@@ -105,12 +105,12 @@
         combo_cfgLayer {
             timeout-ms = <50>;
             key-positions = <34 35>;
-            bindings = <&mo CFG_L>;
+            bindings = <&kp C>;
             };
         combo_bleLayer {
             timeout-ms = <50>;
             key-positions = <33 34>;
-            bindings = <&mo BLE_L>;
+            bindings = <&kp B>;
             };
 
     };
