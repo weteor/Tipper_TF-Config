@@ -138,10 +138,10 @@
 // ------|    Spc    |    Nav    |     |    Sym    |    Ent    |------
 //       -------------------------     -------------------------
             bindings = <
-                &kp W       &kp Q       &kp F       &kp P       &kp G                   &kp J       &kp L       &kp U       &kp Y       &kp QUOT
+                &kp Q       &kp W       &kp F       &kp P       &kp G                   &kp J       &kp L       &kp U       &kp Y       &kp QUOT
                 &hm LSHFT A &hm LGUI R  &hm LALT S  &hm LCTRL T &kp D                   &kp H       &hm RCTRL N &hm RALT E  &hm RGUI I  &hm RSHFT O
                 &kp Z       &kp X       &kp C       &kp V       &kp B     &kp C_MUTE                &kp K       &kp M       &kp COMMA   &kp DOT     &kp SEMI
-                                          &kp SPACE  &mo NAV_L                  &mo SYM_L   &kp RET 
+                                          &lt NUM_L SPACE  &mo NAV_L                  &mo SYM_L   &kp RET 
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
