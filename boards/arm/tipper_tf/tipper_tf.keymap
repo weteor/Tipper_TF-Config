@@ -9,8 +9,8 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 
-#define BAS_CM_L 0
-#define BAS_HD_L 1
+#define BAS_L 0
+#define BAS_CM_L 1
 #define SYM_L 2
 #define NAV_L 3
 #define NUM_L 4
@@ -153,10 +153,26 @@
         compatible = "zmk,keymap";
 
         default_layer {
+            label = "Base";
+// -------------------------------     -------------------------------
+// |  Q  |  W  |  E  |  R  |  T  |  -  |  Y  |  U  |  I  |  O  |  P  | 
+// |A sft|S win|D alt|F ctl|  G  |     |  H  |J ctl|K alt|L win|' sft| 
+// |  Z  |  X  |  C  |  V  |  B  |  -  |  N  |  M  |  ,  |  .  |  ;  | 
+// ------|    Spc    |    Nav    |     |    Sym    |    Ent    |------
+//       -------------------------     -------------------------
+            bindings = <
+                &kp Q       &kp W       &kp E       &kp R       &kp T                   &kp Y       &kp U       &kp I       &kp O       &kp P
+                &hm LSHFT A &hm LGUI S  &hm LALT D  &hm LCTRL F &kp G                   &kp H       &hm RCTRL J &hm RALT K  &hm RGUI L  &hm RSHFT QUOT
+                &kp Z       &kp X       &kp C       &kp V       &kp B                   &kp N       &kp M       &kp COMMA   &kp DOT     &kp SEMI
+                                          &lt NUM_L SPACE  &mo NAV_L                  &mo SYM_L   &kp RET 
+            >;
+        };
+    
+        colemak_layer {
             label = "Base Colemak";
 // -------------------------------     -------------------------------
 // |  Q  |  W  |  F  |  P  |  G  |  -  |  J  |  L  |  U  |  Y  |  '  | 
-// |A sft|R win|S alt|T ctl|  D  | MUT |  H  |N ctl|E alt|I win|O sft| 
+// |A sft|R win|S alt|T ctl|  D  |     |  H  |N ctl|E alt|I win|O sft| 
 // |  Z  |  X  |  C  |  V  |  B  |  -  |  K  |  M  |  ,  |  .  |  ;  | 
 // ------|    Spc    |    Nav    |     |    Sym    |    Ent    |------
 //       -------------------------     -------------------------
@@ -166,31 +182,13 @@
                 &kp Z       &kp X       &kp C       &kp V       &kp B                   &kp K       &kp M       &kp COMMA   &kp DOT     &kp SEMI
                                           &lt NUM_L SPACE  &mo NAV_L                  &mo SYM_L   &kp RET 
             >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
-        };
-    
-        handsdown_layer {
-            label = "Base Hands Down";
-// -------------------------------     -------------------------------
-// |  W  |  C  |  H  |  F  |  V  |  -  |  ;  |  Y  |  U  |  J  |  Q  | 
-// |R sft|S win|N alt|T ctl|  G  | MUT |  K  |I ctl|E alt|O win|A sft| 
-// |  X  |  M  |  L  |  D  |  B  |  -  |  Z  |  P  |  ,  |  .  |  '  | 
-// ------|    Spc    |    Nav    |     |    Sym    |    Ent    |------
-//       -------------------------     -------------------------
-            bindings = <
-                &kp W       &kp C       &kp H       &kp F       &kp V                   &kp SEMI    &kp Y       &kp U       &kp J       &kp Q
-                &hm LSHFT R &hm LGUI S  &hm LALT N  &hm LCTRL T &kp G                   &kp K       &hm RCTRL I &hm RALT E  &hm RGUI O  &hm RSHFT A
-                &kp X       &kp M       &kp L       &kp D       &kp B                   &kp Z       &kp P       &kp COMMA   &kp DOT     &kp QUOT
-                                          &lt NUM_L SPACE  &mo NAV_L                  &mo SYM_L   &kp RET 
-            >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         sym_layer {
             label = "Symbol";
 // -------------------------------     -------------------------------
 // |  `  |  ^  |  @  |  $  |  ~  |  -  |     |     |     |     |     | 
-// |  &  |  !  |  +  |  _  |  #  | MUT |pg up|     |     |     |     | 
+// |  &  |  !  |  +  |  _  |  #  |     |pg up|     |     |     |     | 
 // |  |  |  ?  |  -  |  %  |     |  -  |pg dn|     |     |     |     | 
 // ------|           |    CFG    |     |           |           |------
 //       -------------------------     -------------------------
@@ -200,14 +198,13 @@
                 &kp PIPE    &kp QMARK   &kp MINUS   &kp PERCENT &none                   &kp PG_DN   &none       &none       &none       &none
                                                     &none       &none                   &none       &none
             >;
-            sensor-bindings = <&inc_dec_kp PG_DN PG_UP>;
         };
         
         nav_layer {
             label = "Navigation";
 // -------------------------------     -------------------------------
 // |     |     |     |     |     |  -  |     |pg dn| up  |pg up| del | 
-// |     |     |     |     |     | MUT |home |left |down |right| end | 
+// |     |     |     |     |     |     |home |left |down |right| end | 
 // |     |     |     |     |     |  -  |     |prev | play|stop | next| 
 // ------|           |           |     |    CFG    |           |------
 //       -------------------------     -------------------------
@@ -217,14 +214,13 @@
                 &none       &none       &none       &none       &none                   &none       &none       &none       &none       &none
                                                     &none       &none                   &none       &none
             >;
-            sensor-bindings = <&inc_dec_kp PG_DN PG_UP>;
         };
 
         num_layer {
             label = "Numbers and F-Keys";
 // -------------------------------     -------------------------------
 // |     |  F9 | F10 | F11 | F12 |  -  |  +  | num7| num8| num9|  /  | 
-// |     |  F5 |  F6 |  F7 |  F8 | MUT |  0  | num4| num5| num6|  .  | 
+// |     |  F5 |  F6 |  F7 |  F8 |     |  0  | num4| num5| num6|  .  | 
 // |     |  F1 |  F2 |  F3 |  F4 |  -  |  -  | num1| num2| num3|  *  | 
 // ------|           |           |     |     =     |   ENTER   |------
 //       -------------------------     -------------------------
@@ -234,24 +230,22 @@
                 &none       &kp F1      &kp F2      &kp F3      &kp F4                  &kp KP_MINUS &kp KP_N1  &kp KP_N2   &kp KP_N3   &kp KP_MULTIPLY
                                                     &none       &none                   &kp KP_EQUAL &kp KP_ENTER
             >;
-            sensor-bindings = <&inc_dec_kp PG_DN PG_UP>;
         };
         
         cfg_layer {
             label = "Configuration";
 // -------------------------------     -------------------------------
 // |     |     |     |     |     |  -  |PSCRN|     |  ü  |     |     | 
-// |  ä  |     |  ß  |     |     | MUT |     |     |     |     |  oe | 
+// |  ä  |     |  ß  |     |     |     |     |     |     |     |  oe | 
 // |numlk|     |     |     |     |  -  |     |     |     |     |     | 
 // ------|           |           |     |           |           |------
 //       -------------------------     -------------------------
             bindings = <
-                &kp C       &none       &to BAS_CM_L    &to BAS_HD_L   &kp PSCRN               &none       &none       &none       &none       &none
-                &none       &none       &none        &none       &none                   &none       &none       &none       &none       &none
-                &kp KP_NUM  &none       &none        &none       &none                   &none       &none       &none       &none       &none
-                                                     &none       &none                   &none       &none
+                &kp C       &none       &to BAS_L    &to BAS_CM_L  &kp PSCRN               &none       &none       &none       &none       &none
+                &none       &none       &none        &none         &none                   &none       &none       &none       &none       &none
+                &kp KP_NUM  &none       &none        &none         &none                   &none       &none       &none       &none       &none
+                                                     &none         &none                   &none       &none
             >;
-            sensor-bindings = <&inc_dec_kp PG_DN PG_UP>;
         };
         
         ble_layer {
@@ -268,7 +262,6 @@
                 &none       &none       &none       &none       &none               &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4
                                                     &none       &none               &none       &none
             >;
-            sensor-bindings = <&inc_dec_kp PG_DN PG_UP>;
         };
     };
 };
