@@ -27,63 +27,63 @@
         combo_slash {
             timeout-ms = <50>;
             key-positions = <0 10>;
-            layers = <BAS_CM_L BAS_HD_L>;
+            layers = <BAS_L BAS_CM_L>;
             bindings = <&kp SLASH>;
             };
         combo_lBracket {
             timeout-ms = <50>;
             key-positions = <1 11>;
-            layers = <BAS_CM_L BAS_HD_L>;
+            layers = <BAS_L BAS_CM_L>;
             bindings = <&kp LEFT_BRACKET>;
             };
         combo_lBrace {
             timeout-ms = <50>;
             key-positions = <2 12>;
-            layers = <BAS_CM_L BAS_HD_L>;
+            layers = <BAS_L BAS_CM_L>;
             bindings = <&kp LEFT_BRACE>;
             };
         combo_lParanthesis {
             timeout-ms = <50>;
             key-positions = <3 13>;
-            layers = <BAS_CM_L BAS_HD_L>;
+            layers = <BAS_L BAS_CM_L>;
             bindings = <&kp LEFT_PARENTHESIS>;
             };
         combo_equal {
             timeout-ms = <50>;
             key-positions = <4 14>;
-            layers = <BAS_CM_L BAS_HD_L>;
+            layers = <BAS_L BAS_CM_L>;
             bindings = <&kp EQUAL>;
             };
 
         combo_asterix {
             timeout-ms = <50>;
             key-positions = <5 15>;
-            layers = <BAS_CM_L BAS_HD_L>;
+            layers = <BAS_L BAS_CM_L>;
             bindings = <&kp ASTERISK>;
             };
 
         combo_rParanthesis {
             timeout-ms = <50>;
             key-positions = <6 16>;
-            layers = <BAS_CM_L BAS_HD_L>;
+            layers = <BAS_L BAS_CM_L>;
             bindings = <&kp RIGHT_PARENTHESIS>;
             };
         combo_rBrace {
             timeout-ms = <50>;
             key-positions = <7 17>;
-            layers = <BAS_CM_L BAS_HD_L>;
+            layers = <BAS_L BAS_CM_L>;
             bindings = <&kp RIGHT_BRACE>;
             };
         combo_rBracket {
             timeout-ms = <50>;
             key-positions = <8 18>;
-            layers = <BAS_CM_L BAS_HD_L>;
+            layers = <BAS_L BAS_CM_L>;
             bindings = <&kp RIGHT_BRACKET>;
             };
         combo_bSlash {
             timeout-ms = <50>;
             key-positions = <9 19>;
-            layers = <BAS_CM_L BAS_HD_L>;
+            layers = <BAS_L BAS_CM_L>;
             bindings = <&kp BACKSLASH>;
             };
 
