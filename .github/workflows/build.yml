@@ -6,7 +6,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: zmkfirmware/zmk-build-arm:2.5
+      image: zmkfirmware/zmk-build-arm:stable
     name: Build
     steps:
       - name: Checkout
@@ -35,9 +35,6 @@ jobs:
         run: west zephyr-export
       - name: West Build (TIPPER_TF)
         run: west build -s zmk/app -b tipper_tf -- -DZMK_CONFIG="${GITHUB_WORKSPACE}"
-      - name: TIPPER_TF DTS File
-        if: ${{ always() }}
-        run: cat -n build/zephyr/tipper_tf.dts.pre.tmp
       - name: TIPPER_TF Kconfig file
         run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
       - name: Rename zmk.uf2
